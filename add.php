@@ -1,19 +1,28 @@
 <?php 
- require "database.php";
 
-// add item
-if(isset($_POST['name'])){ 
-$name =$_POST ['name'];
+
+// add task functions
+if(isset($_POST['title']) && isset($_POST['createdBy']) ){ 
+$createdBy =$_POST ['createdBy'];
+$title =$_POST ['title'];    
     
-    if(!empty($name)){
-		$addQuery = $pdo->prepare("
-			INSERT INTO todos (title, createdBy, completed)
-			VALUES (:name, :user, 0,())
+    
+    $statement= $pdo->prepare("
+			INSERT INTO todos (title, createdBy)
+			VALUES (:title, :createdBy)
 			");
-		$addQuery->execute([
-			'name' => $name,
-			'user' => $_SESSION['user_id']
-			]);
-	}
+		
+
+    
+    $statement-> execute(array(
+    ":createdBy"  => $_POST["createdBy"],
+    ":title" => $_POST ["title"]
+    ));
+  
+    
+    header('Location: index.php');
+
+    
 }
+
 ?>
