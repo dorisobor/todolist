@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 require "function.php";
 
@@ -42,4 +43,33 @@ echo "<p>Please fill in both fields and pick a priority to add a task!</p>";
 }
 }
 
+=======
+<?php 
+
+
+// add task functions
+if(isset($_POST['title']) && isset($_POST['createdBy']) ){ 
+$createdBy =$_POST ['createdBy'];
+$title =$_POST ['title'];    
+    
+    
+    $statement= $pdo->prepare("
+			INSERT INTO todos (title, createdBy)
+			VALUES (:title, :createdBy)
+			");
+		
+
+    
+    $statement-> execute(array(
+    ":createdBy"  => $_POST["createdBy"],
+    ":title" => $_POST ["title"]
+    ));
+  
+    
+    header('Location: index.php');
+
+    
+}
+
+>>>>>>> 04533909290c4708ea056e4263ec8ce6d9de594a
 ?>

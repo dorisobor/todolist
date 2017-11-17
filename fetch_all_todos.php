@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <?php
  //Include database connection file
  require "database.php";
@@ -50,3 +51,19 @@ $tasks =  $statement ->fetchAll(PDO::FETCH_ASSOC);
     
 }
 ?>
+=======
+ <?php
+ //Include database connection file
+ require "database.php";
+
+ //Prepare statement 
+  $statement = $pdo->prepare("SELECT * FROM todos");
+  
+ //execute it
+ $statement->execute();
+  
+// Fetch all rows
+$tasks =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
+    
+     ?>
+>>>>>>> 04533909290c4708ea056e4263ec8ce6d9de594a
