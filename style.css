@@ -32,19 +32,44 @@ font-size:1.5em;
 
 }
 
-/* Tasks line  styling */
+
+/*alert icon on the right side*/
+
+.alert {
+float: left;
+margin-bottom:30px;
+
+}
+
+/*edit icon on the left side*/
+
+.edit {
+float: left;
+padding: 15px;
+}
+
+/* Tasks line styling */
 .tasks li {
 	
 	border-bottom: 1px dashed #ccc;
 	padding:15px ; 
 	}
 	
-	
-	.tasks li:hover .done-button {
-		
-		opacity:1;
-		
-	}
+/* Change the opacity once the mouse is over the done button*/
+ .done-button:hover {
+
+    opacity: 1;
+
+}
+
+/* Change the opacity once the mouse is over 
+the delete button*/
+ .delete-button:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius: 25px;
+
+
+}
 
 /*done button*/
 .done-button {
@@ -77,24 +102,21 @@ font-size:1.5em;
 	
 	
 	
-	
 	/*submit button styling*/
+
 	.submit {
-		background-color:#fa9c9c;
-		border: 1px solid #f8383a;
-		color:black;
-		border-radius: 12px;
-		box-shadow: 3px 3px 0 #ddd;
+	    background-color: #fa9c9c;
+	    border: 1px solid #f8383a;
+	    color: black;
+	    border-radius: 12px;
+	    box-shadow: 3px 3px 0 #ddd;
 	}
 
 
-/*Footer*/
+	/*Footer*/
 
+	footer {
 
-footer {
-    
-    text-align: center;
-    color:
-    
-    
-}
+	    text-align: center;
+	    color:
+	}
